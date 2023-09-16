@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+}
+
+#welcome-section {
+    font-size: 2.5rem;
+    font-family: Helvetica, sans-serif;
+    height: 100vh;
+    text-align: center;
+    padding-top: 45vh;
+    color: rgb(220, 221, 200);
+    text-shadow: 5px 5px 20px rgb(47, 2, 107);
+    background: linear-gradient(45deg, rgb(34, 1, 36), rgb(81, 18, 133));
+}
+
+#welcome-section p:first-of-type {
+    color: rgb(253, 242, 88);
+    font-size: 2.5rem;
+    padding-top: 20px;
+    font-style: italic;
+    font-weight: 0;
+}
+
+#welcome-section p:nth-of-type(2) {
+    color: rgb(233, 232, 157);
+    font-size: 0.9rem;
+}
+
+#projects {
+    background: radial-gradient(rgb(6, 29, 59) 80%, rgb(4, 16, 54) 95%);
+    border: 1px solid rgb(9, 1, 43);
+    padding: 20px;
+}
+
+#projects h2 {
+    text-align: center;
+    padding-top: 150px;
+    font-size: 2rem;
+    font-family: Tahoma, sans-serif;
+    color: rgb(255, 236, 225);
+    letter-spacing: 2px;
+    border-bottom: 1px solid white;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    width: 100%;
+    max-width: 1280px;
+    margin: 6rem auto;
+    gap: 4rem;
+}
+
+.project-tile {
+    text-decoration: none;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.3rem;
+    background-color: rgb(22, 11, 4);
+    color: aliceblue;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0);
+}
+
+.project-image {
+    height: calc(100% - 3.7rem);
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 0.9rem;
+}
+
+.project-caption {
+    display: inline;
+}
+
+.project-tile span {
+    color: transparent;
+    transition: 0.2s;
+}
+
+.project-tile:hover span{
+    color: orange;
+}
+
+.show-all-button {
+    display: block;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2rem;
+    width: 250px;
+    color: white;
+    padding: 1rem 2rem;
+    background: linear-gradient(-90deg, black 50%, rgb(0, 135, 189) 60%);
+    background-size: 400%, 400%;
+    background-position-x: 100%;
+    margin: 80px auto;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0);
+}
+
+.show-all-button:hover {
+    animation: 1s linear btn-gradient;
+    animation-fill-mode:forwards;
+}
+
+@keyframes btn-gradient {
+    0% {
+        background-position-x: 70%;
+    }
+    100% {
+        
+        background-position-x: 0%;
+    }
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 3rem;
+    background-color: rgb(16, 4, 37);
+    border-bottom: 4px solid purple;
+}
+
+.contact-header p {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 75px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    padding:20px;
+    font-size: 2rem;
+    color: white;
+    transition: transform 1s;
+}
+
+#profile-link:hover {
+    transform: translateY(10px);
+}
+
+footer {
+    background-color: rgb(16, 4, 37);
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px;
+}
+
+#navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 75px;
+    width: 100%;
+    background: linear-gradient(-90deg, rgb(7, 42, 71), rgb(1,1,1));
+    border: 2px solid black;
+    font-size: 2rem;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+#navbar a {
+    display: block;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+}
+
+#navbar a:hover {
+    background-color: rgb(8, 55, 70);
+    color: rgb(225, 215, 228);
+}
+
+@media only screen and (max-width: 600px)
+{
+    #navbar {
+        justify-content: center;
+        padding: 0;
+    }
+
+    #navbar a {
+        margin-right: 0;
+    }
+
+    .contact-header {
+        font-size: 2rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
